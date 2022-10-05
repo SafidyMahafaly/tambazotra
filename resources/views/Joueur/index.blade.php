@@ -14,7 +14,8 @@
                         @else
                         <div class="row">
                             <div class="col-md-12">
-                                <h1>{{$tirage->tirage}}</h1>
+                                <h1>{{$tirage->tirage}} </h1>
+                                <p>{{ $choix }}</p>
                                 <a href="#" class="btn btn-danger" value="Mena" onclick="sub(1,{{$tirage->id}});" class="choix">Mena</a>
                                 <a href="#" class="btn btn-dark" value="Mainty" onclick="sub(0,{{$tirage->id}});" class="choix">Mainty</a>
                             </div>

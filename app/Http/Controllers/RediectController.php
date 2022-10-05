@@ -15,12 +15,10 @@ class RediectController extends Controller
         if($req[0]->role_id == 1){
             return view('Admin.index');
         }elseif($req[0]->role_id == 2){
-            $sessions = Tirage::last();
+            $tirage = Tirage::orderBy('id', 'DESC')->first();
             $choix = Choix::where('user_id', Auth::user()->id)
-                            ->where('session_id', '')
+                            ->where('session_id', $tirage->id)
                             ->first();
-            // dd($choix);
-            $tirage = Tirage::first();
             return view('Joueur.index',compact('tirage','choix'));
         }
     }
