@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Routing\RedirectController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RediectController;
+use App\Http\Controllers\TirageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard',[RediectController::class,'index'])->name('dashboard');
+Route::post('/tirage',[TirageController::class,'store'])->name('tirage');
+Route::get('/choix',[TirageController::class,'choix']);
+require __DIR__.'/auth.php';
