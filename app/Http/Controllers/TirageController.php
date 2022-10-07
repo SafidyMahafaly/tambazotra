@@ -59,6 +59,14 @@ class TirageController extends Controller
         return response()->json($session_id);
     }
 
+    public function vita(){
+        Tirage::create([
+            'tirage' => 'tirage',
+        ]);
+
+        return response()->json('seesion renouvele');
+    }
+
     /**
      * Display the specified resource.
      *

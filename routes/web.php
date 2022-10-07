@@ -27,4 +27,5 @@ Route::get('/', function () {
 Route::get('/dashboard',[RediectController::class,'index'])->name('dashboard');
 Route::post('/tirage',[TirageController::class,'store'])->name('tirage');
 Route::get('/choix',[TirageController::class,'choix']);
+Route::get('/tiragevita',[TirageController::class,'vita']);
 require __DIR__.'/auth.php';
