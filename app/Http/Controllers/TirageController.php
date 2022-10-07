@@ -45,18 +45,18 @@ class TirageController extends Controller
 
         return redirect()->back();
     }
-    public function choix(Request $request){
+    public function choix(Request $request)
+    {
         $id         = Auth::user()->id;
         $session_id = $request->session_id;
         $choix      = $request->choix;
 
         Choix::create([
-                'user_id'    => $id,
-                'session_id' =>$session_id,
-                'choix'      => $choix,
-            ]);
+            'user_id'    => $id,
+            'session_id' => $session_id,
+            'choix'      => $choix,
+        ]);
         return response()->json($session_id);
-
     }
 
     /**
