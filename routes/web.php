@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Routing\RedirectController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RediectController;
+use App\Http\Controllers\KenoController;
 use App\Http\Controllers\TirageController;
+use Illuminate\Routing\RedirectController;
+use App\Http\Controllers\RediectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,5 @@ Route::get('/dashboard',[RediectController::class,'index'])->name('dashboard');
 Route::post('/tirage',[TirageController::class,'store'])->name('tirage');
 Route::get('/choix',[TirageController::class,'choix']);
 Route::get('/tiragevita',[TirageController::class,'vita']);
+Route::get('/keno',[KenoController::class,'index'])->name('keno.index');
 require __DIR__.'/auth.php';
